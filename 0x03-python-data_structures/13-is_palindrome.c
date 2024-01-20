@@ -20,7 +20,7 @@ int is_palindrome(listint_t **head)
  *
  * Return: 0 or 1
 */
-int palind(listint_t **head, listtint_t *end)
+int palind(listint_t **head, listint_t *end)
 {
 	if (end == NULL)
 		return (1);
