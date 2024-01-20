@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __solu__ == "__main__":
+if __name__ == "__main__":
     """Print all hidden directories"""
     import hidden_4
 

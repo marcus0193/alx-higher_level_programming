@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __solu__ == "__main__":
+if __name__ == "__main__":
     import sys
     sum = 0
     for n in range(len(sys.argv) - 1):
