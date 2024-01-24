@@ -10,4 +10,4 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(count))
     for n in range(count):
-        print("{}: {}".format(n + 1, sys.argv[i + 1]))
+        print("{}: {}".format(n + 1, sys.argv[n + 1]))
