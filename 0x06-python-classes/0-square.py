@@ -3,5 +3,5 @@
 
 
 class square:
-    '''Defines a square that create a empty square.'''
+    """Defines a square that create a empty square."""
     pass
