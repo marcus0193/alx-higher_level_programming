@@ -3,5 +3,5 @@
 
 
 class square:
-    """Defines square defination step."""
+    """Defines a square."""
     pass
