@@ -5,6 +5,7 @@
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix.
 
+
     Args:
         matrix: List of the method lists.
         div: The division num.

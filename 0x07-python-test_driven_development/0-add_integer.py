@@ -5,6 +5,7 @@
 def add_integer(a, b=98):
     """Sum the two given args.
 
+
     Args:
         a: the fisrt arg.
         b: the sec arg.

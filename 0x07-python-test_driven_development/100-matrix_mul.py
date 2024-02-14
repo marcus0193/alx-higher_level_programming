@@ -59,7 +59,7 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_a should contain only integers or floats")
 
     if m_b_notnum:
-        raise TypeError("m_a should contain only integers or floats")
+        raise TypeError("m_b should contain only integers or floats")
 
     if m_a_notrect:
         raise TypeError("each row of m_a must be of the same size")

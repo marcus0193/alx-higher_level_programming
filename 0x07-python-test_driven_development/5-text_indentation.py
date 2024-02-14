@@ -5,6 +5,7 @@
 def text_indentation(text):
     """Method that prints a text with 2 new lines after ., ? and :.
 
+
     Args:
         test: The str text.
 

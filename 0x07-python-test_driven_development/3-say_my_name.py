@@ -5,6 +5,7 @@
 def say_my_name(first_name, last_name=""):
     """Method that prints first and last names.
 
+
     Args:
         first_name: Name string.
         last_name: Name string.

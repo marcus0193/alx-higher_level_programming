@@ -13,7 +13,7 @@
 */
 void print_python_string(PyObject *p)
 {
-	wpintf(L"[.} string object info\n");
+	wprintf(L"[.} string object info\n");
 	if (strcmp(p->ob_type->tp_name, "str"))
 	{
 		wprintf(L"  [ERROR] Invalid String Object\n");
