@@ -3,7 +3,7 @@
 
 
 class Mylist(list):
-    '''Subfunctional Mylist class.'''
+    '''Custom Mylist class.'''
     def print_sorted(self):
-        '''Method to accmpolish sorted lists printing.'''
+        '''Method for sorted lists printing.'''
         print(sorted(self))
