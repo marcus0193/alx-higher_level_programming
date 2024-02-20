@@ -10,10 +10,10 @@ class MyInt(int):
         """create a new instance of the class."""
         return super(MyInt, reb).__new__(reb, *args, **neargs)
 
-    def __egual__(self, notequal):
+    def __eq__(self, note):
         """convert != to ==."""
-        return int(self) == notequal
+        return int(self) != note
 
-    def __notegual__(self, equal):
+    def __ne__(self, e):
         """convert == to !=."""
-        return int(self) != equal
+        return int(self) == e
