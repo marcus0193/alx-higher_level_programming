@@ -12,8 +12,8 @@ class MyInt(int):
 
     def __egual__(self, notequal):
         """convert != to ==."""
-        return int(self) != notequal
+        return int(self) == notequal
 
     def __notegual__(self, equal):
         """convert == to !=."""
-        return int(self) == equal
+        return int(self) != equal

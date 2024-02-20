@@ -17,4 +17,4 @@ class Square(Rectangle):
 
     def __str__(self):
         '''Returns representation of the square on string.'''
-        return "[Square]" + str(self.__size) + "/" + str(self.__size)
+        return "[Square]"  + str(self.__size) + "/" + str(self.__size)
