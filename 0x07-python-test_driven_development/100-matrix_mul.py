@@ -8,7 +8,7 @@ def matrix_mul(m_a, m_b):
     Args:
         m_a: First matrix.
         m_b: second matrix.
-    
+
     Return:
         matrix: The result
 
