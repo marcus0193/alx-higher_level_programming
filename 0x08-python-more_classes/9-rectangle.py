@@ -8,17 +8,21 @@ class Rectangle:
     """Rectangle repersentation"""
 
     number_of_instances = 0
+    """int: The number of active instance."""
+
+    print_symbol = '#'
+    """type: Print symbol, can be any type."""
 
     def __init__(self, width=0, height=0):
-        """Rectangle initialization"""
+        """Constructor.
+
+        Args:
+            width: Rectangle's width.
+            height: Rectangle's height.
+        """
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
-        
-    def __del__(self):
-        """Print a message for every rectangle deletion"""
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
@@ -60,12 +64,45 @@ class Rectangle:
 
     def __str__(self):
         """Returns a printable rectangle's representation"""
-        string = ""
-        if self.__width != 0 and self.__heigth != 0:
-            string += "\n".join("#" * self.width
-                                for j in range(self.__heigth))
-        return string
+        if not self.width or not self.hight:
+            return ""
+        return ((str(self.print_symbol) * self.width + "\n") *
+                self.height) [:-1]
 
     def __repr__(self):
         """Returns a string representation of the rectangle for reproduction"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
+
+    def __del__(self):
+        """Print a message for every rectangle deletion"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the bigger Rectangle.
+
+        Args:
+            rect_1: The first.
+            rect_2: The second.
+        Raises:
+            TypeError: If rect_1, rect_2 are not instamces of Rectangle.
+        Returns:
+            The rectangle with the biggest area.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(sect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """Instantiates a new square.
+
+        Args:
+            size: the new square's size.
+        """
+        return cls(size, size)
