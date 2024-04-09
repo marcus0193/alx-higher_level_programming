@@ -9,7 +9,7 @@ def init_board(n):
     """Inialize an 'n' * 'n' sized chessboard with 0's."""
     board = []
     [board.append([]) for i in range(n)]
-    [row,append(' ') for i in range(n) for row in board]
+    [row.append(' ') for i in range(n) for row in board]
     return (board)
 
 
