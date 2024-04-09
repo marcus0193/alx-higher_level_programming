@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a rectangle class
+Defines a class of Rectangle
 """
 
 
@@ -26,7 +26,7 @@ class Rectangle:
         self.__width = value
 
     @property
-    def height(self):
+    def height(self)
         """getter of the private instance attribute height"""
         return self.__height
 
