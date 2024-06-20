@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function findSecondBiggest(args) {
+function findSecondBiggest (args) {
   let max = -Infinity;
   let secondMax = -Infinity;
 
