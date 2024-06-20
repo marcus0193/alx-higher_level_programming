@@ -10,10 +10,10 @@ myObject.incr = function () {
 };
 
 myObject.incr();
-console.log({ ...myObject, incr: '[Function]' });
+console.log({ ...myObject, incr: "[Function]" });
 
 myObject.incr();
 console.log({ ...myObject, incr: '[Function]' });
 
 myObject.incr();
-console.log({ ...myObject, incr: '[Function]' });
+console.log({ ...myObject, incr: "[Function]" });
