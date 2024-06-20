@@ -12,13 +12,9 @@ const fileC = process.argv[3];
 
 try {
   const contentA = fs.readFileSync(fileA, 'utf8');
-  if (contentA.trim() === '' || contentB.trim() === '') {
-	  pass;
-  } else {
   const contentB = fs.readFileSync(fileB, 'utf8');
   const concatenatedContent = contentA + contentB;
   fs.writeFileSync(fileC, concatenatedContent);
-  }
 } catch (error) {
   console.error('Error:', error.message);
   process.exit(1);
