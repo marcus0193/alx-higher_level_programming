@@ -27,10 +27,10 @@ def list_states(username, password, db_name):
         cursor = connection.cursor()
         # Execute query to retrieve states
         cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        states = cursor.fetchall()
+        states = cursor.fetchmany(5)
 
         # Display results
-        for state in states[:5]:
+        for state in states:
             print(state)
 
         # Close the cursor and connection
