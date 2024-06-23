@@ -1,8 +1,23 @@
 #!/usr/bin/python3
+"""
+Script that lists all states from the database hbtn_0e_0_usa
+"""
+
 import MySQLdb
 import sys
 
 def list_states(username, password, db_name):
+    """
+    Connects to the MySQL server and retrieves states from the specified database.
+
+    Args:
+        username (str): MySQL username.
+        password (str): MySQL password.
+        db_name (str): Database name.
+
+    Returns:
+        None
+    """
     try:
         # Connect to MySQL server
         connection = MySQLdb.connect(host='localhost', port=3306,
