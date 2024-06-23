@@ -13,7 +13,7 @@ def list_states(username, password, db_name):
         states = cursor.fetchall()
 
         # Display results
-        for state in states:
+        for state in states[:5]:
             print(state)
 
         # Close the cursor and connection
@@ -25,9 +25,6 @@ def list_states(username, password, db_name):
         sys.exit(1)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: ./0-select_states.py <username> <password> <db_name>")
-        sys.exit(1)
 
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     list_states(username, password, db_name)
