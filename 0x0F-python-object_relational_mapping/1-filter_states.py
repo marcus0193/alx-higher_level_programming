@@ -1,46 +1,30 @@
 #!/usr/bin/python3
 """
-Script that lists all states statring with N from the database hbtn_0e_0_usa
+Script that lists all states starting by N from the database
 """
 
 import MySQLdb
 import sys
 
 
-def list_Nstates(username, password, db_name):
-    """
-    Connects to the MySQL server and retrieves states from database.
-
-    Args:
-        username (str): MySQL username.
-        password (str): MySQL password.
-        db_name (str): Database name.
-
-    Returns:
-        None
-    """
-    try:
-        # Connect to MySQL server
-        connection = MySQLdb.connect(host='localhost', port=3306,
-                                     user="root", passwd="root",
-                                     db="hbtn_0e_0_usa")
-        cursor = connection.cursor()
-        # Execute query to retrieve states
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id asc")
-        states = cursor.fetchmany(2)
-        # Display results
-        for row in states:
-            print(row)
-        # Close the cursor and connection
-        cursor.close()
-        connection.close()
-
-    except MySQLdb.Error as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-
-
 if __name__ == "__main__":
+    # Connect to MySQL server
+    connection = MySQLdb.connect(
+            host='localhost',
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            port=3306
+            )
+    cursor = connection.cursor()
+    # Execute query to retrieve states
+    cursor.execute("""SELECT * FROM states WHERE name
+            LIKE BINARY 'N%' ORDER BY states.id""")
+    state = cursor.fetchall()
+    # Display results
+    for x in state:
+        print(x)
 
-    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    list_Nstates(username, password, db_name)
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
