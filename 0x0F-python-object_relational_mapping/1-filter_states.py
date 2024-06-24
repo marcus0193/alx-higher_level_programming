@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Script that lists all states from the database hbtn_0e_0_usa
+Script that lists all states statring with N from the database hbtn_0e_0_usa
 """
 
 import MySQLdb
 import sys
 
 
-def list_states(username, password, db_name):
+def list_Nstates(username, password, db_name):
     """
     Connects to the MySQL server and retrieves states from database.
 
@@ -23,15 +23,14 @@ def list_states(username, password, db_name):
         # Connect to MySQL server
         connection = MySQLdb.connect(host='localhost', port=3306,
                                      user="root", passwd="root",
-                                     db='hbtn_0e_0_usa')
+                                     db="hbtn_0e_0_usa")
         cursor = connection.cursor()
         # Execute query to retrieve states
-        cursor.execute("SELECT * FROM states ORDER BY id asc")
-        states = cursor.fetchmany(5)
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id asc")
+        states = cursor.fetchmany(2)
         # Display results
-        for state in states:
-            print(state)
-
+        for row in states:
+            print(row)
         # Close the cursor and connection
         cursor.close()
         connection.close()
@@ -44,4 +43,4 @@ def list_states(username, password, db_name):
 if __name__ == "__main__":
 
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    list_states(username, password, db_name)
+    list_Nstates(username, password, db_name)
