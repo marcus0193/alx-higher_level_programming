@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 
 """
-file contains the class State and an instance Base = declarative_base():
+file contains the class city and an instance Base = declarative_base():
+inherits from Base (imported from model_state)
 """
 
-from sqlalchemy import Column, Integer, String, MetaData
+from model_state import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
 
-
-class State(Base):
+class City(Base):
     """
-    State class inherits from Base links to the MySQL table states
+    City class inherits from Base links to the MySQL table Cities
     """
 
-    __tablename__ = 'states'
+    __tablename__ = 'cities'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)

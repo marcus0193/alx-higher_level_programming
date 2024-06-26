@@ -4,6 +4,7 @@ script that print all city objects
 from the database hbtn_0e_6_usa
 """
 import sys
+from model_city import City
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
@@ -16,6 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for x in (seesion.query(State.name, City.id, City.name)
-            .filter(State.id == City.state_id)):
-        print(x[0] + ": (" + str(x[1] + ") " + x[2])
+    for x in (session.query(
+        State.name, City.id, City.name).filter(State.id == City.state_id)
+    ):
+        print(x[0] + ": (" + str(x[1]) + ") " + x[2])
