@@ -7,7 +7,6 @@ City objects, contained in the database hbtn_0e_101_usa
 if __name__ == '__main__':
 
     from sqlalchemy import create_engine
-    from sqlalchemy.ext.declarative import declarative_base
     from sqlalchemy.orm import sessionmaker
     import sys
     from relationship_state import Base, State
