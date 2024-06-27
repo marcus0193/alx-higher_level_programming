@@ -10,6 +10,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     """
     City class inherits from Base links to the MySQL table Cities
