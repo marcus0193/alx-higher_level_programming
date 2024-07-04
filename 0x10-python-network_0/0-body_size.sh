@@ -7,8 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 # Get the response body size using curl
-response=$(curl -sI "$1" | grep -i Content-Length)
-size=$(echo "$response" | awk '{print $2}')
+size=$(curl -s "$1" | wc -c)
 
 # Display the size in bytes
 echo $size
